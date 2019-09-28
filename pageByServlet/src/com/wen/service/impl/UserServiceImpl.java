@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User Login(User user) {
 
-
+        //调用dao层操作数据库
         User qUser = userDao.findByUsernameAndPassword(user.getUsername(), user.getPassword());
 
         return qUser;
