@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+           //请求数据
+            $.get("/ajaxByServlet_war_exploded/redisTestServlet",{},function (data) {
+                //获取元素
+                var s = $("#select");
+                //遍历数据
+                $(data).each(function () {
+
+                    var op = "<option id='"+this.id+"'>"+this.username+"</option>"
+                    s.append(op);
+
+                });
+
+
+
+
+            });
+
+
+
+        });
+
+
+
+    </script>
+</head>
+<body>
+
+<select id="select">
+    <option>--请选择--</option>
+</select>
+
+</body>
+</html>
